@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{metadata.title}}</title>
-    <meta name="description" content="{{metadata.description}}">
+    <title>All Authors</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 2em; max-width: 800px; margin-left: auto; margin-right: auto; }
         img { max-width: 100%; height: auto; }
@@ -12,6 +11,7 @@
 </head>
 <body>
     <header>
+        <h1>All Authors</h1>
         <nav>
             <a href="/">Home</a>
             {{#each pages}}
@@ -19,17 +19,18 @@
             {{/each}}
             <a href="/authors/">Authors</a>
         </nav>
-        <hr>
-        <h1>{{metadata.title}}</h1>
-        {{#if metadata.author}}
-            <p>By <a href="/authors/{{authorSlug}}/">{{metadata.author}}</a> on {{metadata.publishedDate}}</p>
-        {{/if}}
     </header>
-    <article>
-        {{{content}}} {{!-- Triple braces for unescaped HTML --}}
-    </article>
+    <main>
+        <ul>
+            {{#each authors}}
+            <li>
+                <h2><a href="/authors/{{this.slug}}/">{{this.name}}</a> ({{this.postCount}} Posts)</h2>
+            </li>
+            {{/each}}
+        </ul>
+    </main>
     <footer>
-        <p><a href="/">Back to Home</a></p>
+        <p>&copy; 2025 footer here</p>
     </footer>
 </body>
 </html>

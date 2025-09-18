@@ -18,6 +18,7 @@ A fast, simple, zero-maintenance static site generator for writers and creators 
 -   **Markdown-it Powered:** Supports all standard Markdown syntax, including tables and code blocks.
 -   **Handlebars Templating:** Simple and powerful templating for your post layouts and homepage.
 -   **Local Development Server:** Easily preview your site locally before deploying.
+-   **Author pages:** Generates author pages for each author
 -   **Sitemap:** Generates a sitemap of all files during build.
 
 ## Prerequisites
