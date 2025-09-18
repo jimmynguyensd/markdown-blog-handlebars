@@ -9,6 +9,7 @@ import { glob } from 'glob';
 const md = new MarkdownIt();
 
 // --- Configuration ---
+const SITE_URL = 'https://www.your-domain.com'; // IMPORTANT: Change this to your actual domain!
 const CONTENT_DIR = './content';
 const TEMPLATES_DIR = './templates';
 const OUTPUT_DIR = './public'; // Where static HTML will be saved
@@ -70,6 +71,41 @@ const processMarkdownFile = (markdownContent, filePath) => {
         content: htmlContent, // HTML content now!
     };
 };
+
+const generateSitemap = (posts, pages) => {
+    const allContent = [...posts, ...pages];
+
+    // Start the XML string with the required header and root element
+    let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+    // Add the homepage URL
+    sitemapXml += `
+  <url>
+    <loc>${SITE_URL}/</loc>
+  </url>`;
+
+    // Add a URL entry for each post and page
+    for (const item of allContent) {
+        // Construct the full, absolute URL
+        const itemPath = item.category 
+            ? `${item.category}/${item.slug}` 
+            : item.slug;
+        const fullUrl = `${SITE_URL}/${itemPath}/`;
+
+        sitemapXml += `
+  <url>
+    <loc>${fullUrl}</loc>
+  </url>`;
+    }
+
+    // Close the root element
+    sitemapXml += `
+</urlset>`;
+
+    return sitemapXml;
+};
+
 // --- Main Build Function ---
 const buildSite = async () => {
     console.log("Starting static site build...");
@@ -138,6 +174,11 @@ const buildSite = async () => {
         await fse.copy(assetsSourceDir, assetsDestDir);
         console.log(`Copied assets to ${assetsDestDir}`);
     }
+
+    // 7. Generate sitemap.xml
+    const sitemapContent = generateSitemap(allPosts, allPages);
+    await fs.writeFile(path.join(OUTPUT_DIR, 'sitemap.xml'), sitemapContent);
+    console.log(`Generated: ${path.join(OUTPUT_DIR, 'sitemap.xml')}`);
 
     console.log("Static site build complete!");
 };
