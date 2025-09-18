@@ -1,0 +1,8 @@
+# Dependencies
+/node_modules
+
+# Build output
+/public
+
+# System files
+.DS_Store

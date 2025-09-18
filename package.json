@@ -1,0 +1,23 @@
+{
+  "name": "markdown-blog-handlebars",
+  "version": "1.0.0",
+  "main": "build.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "start": "serve public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fs-extra": "^11.3.2",
+    "glob": "^11.0.3",
+    "handlebars": "^4.7.8",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}
