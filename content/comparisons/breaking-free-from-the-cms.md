@@ -5,7 +5,7 @@ publishedDate: 2025-04-30
 author: "Jimmy Nguyen"
 ---
 
-WordPress and Ghost are powerful platforms. They power a huge portion of the web, and for good reason. But for many individual writers and creators, they are overkill—a sledgehammer to crack a nut. The hidden cost is "tech debt," a slow accumulation of complexity that eventually grinds your productivity to a halt.
+There are powerful CMS platforms out there. They power a huge portion of the web, and for good reason. But for many individual writers and creators, they are overkill—a sledgehammer to crack a nut. The hidden cost is "tech debt," a slow accumulation of complexity that eventually grinds your productivity to a halt.
 
 Let's break down the real-world differences between a traditional CMS and this simple, file-based system.
 
@@ -28,5 +28,3 @@ For a writer, tech debt isn't about code; it's about friction. It's...
 - The monthly hosting bill that makes you question if your blog is "worth it."
 
 A file-based system has virtually zero tech debt. It's just your words, beautifully formatted, delivered to your readers at the speed of light.
-
-**CTA:** Stop paying the "CMS tax" in time, money, and frustration. [Start your own simple blog](#) and build a digital home that will last a decade without demanding constant attention.
