@@ -7,7 +7,7 @@ author: "Jimmy Nguyen"
 
 As a writer, your most valuable asset is your collection of words. So why do we entrust them to complex, slow, and often frustrating platforms that feel more like chores than creative spaces?
 
-For years, we've been told we need sophisticated Content Management Systems (CMS) like WordPress or Ghost. We've been sold on plugins, themes, and databases. But with that power comes a heavy price: constant updates, security vulnerabilities, slow loading times, and a nagging feeling that you don't truly *own* your work.
+For years, we've been told we need sophisticated Content Management Systems (CMS). We've been sold on plugins, themes, and databases. But with that power comes a heavy price: constant updates, security vulnerabilities, slow loading times, and a nagging feeling that you don't truly *own* your work.
 
 This blog is built on a different philosophy: **your content is everything.**
 
