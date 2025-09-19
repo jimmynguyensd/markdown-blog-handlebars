@@ -43,7 +43,13 @@ A fast, simple, zero-maintenance static site generator for writers and creators 
 
 ## How to Use
 
-### 1. Create Content: Posts and Pages
+### Before we start...
+
+Find the .env_EXAMPLE and rename it to .env.
+
+Change the website value. 
+
+### 1. Create Content: Posts, Pages, and Author pages
 
 This system supports two types of content: chronological **posts** for your blog feed and timeless **pages** for navigation.
 
@@ -88,6 +94,54 @@ author: "Your Name"
 This is the content for your about page...
 
 ---
+
+### Author Pages
+
+Beyond just listing posts, you can create rich, content-driven profile pages for each author. This allows for custom bios, social links, and improved SEO (E-E-A-T).
+
+The system links the `author:` field in your blog posts to a dedicated Markdown file for that author.
+
+#### Step 1: Create the Author's Profile File
+
+- Inside your `content` folder, create a new directory named `authors`.
+- In `content/authors/`, create a Markdown file for each author. The filename must be a URL-friendly slug for the author (e.g., for "Jimmy Nguyen", use `jimmy-nguyen.md`).
+
+#### Step 2: Add Author Profile Content
+
+Each author file uses frontmatter for profile data and the main body for the author's detailed bio.
+
+**Example: `content/authors/jimmy-nguyen.md`**
+
+```yaml
+---
+name: "Jimmy Nguyen"         # (Required) Full display name
+title: "Nerd"               # (Optional) Job title or role
+bio_short: "Web dev & coffee drinker" # (Optional) One-line bio for listings
+social:                      # (Optional) Social media links
+    github: "gihub url here"
+    twitter: "twitter url here"
+    website: "website url here"
+---
+Jimmy likes coffee.
+```
+
+#### Step 3: Link Posts to the Author
+
+In your blog post `.md` files, use the author's full name in the `author` field. The build script will automatically connect the post to the author's profile.
+
+**Example Blog Post: `content/tech/my-post.md`**
+
+```yaml
+---
+title: "My Awesome New Post"
+description: "A short description of the post."
+publishedDate: 2024-05-21
+author: "Jimmy Nguyen"
+---
+```
+
+This post will now be automatically associated with the profile defined in `content/authors/jimmy-nguyen.md`. A link to the author's profile will appear on the post's page.
+
 
 ### 2. Add Images & Assets
 
